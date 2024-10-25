@@ -12,7 +12,10 @@ import androidx.navigation.compose.rememberNavController
 fun Navigation(viewModel:WishViewModel = viewModel(), navController:NavHostController = rememberNavController()){
     NavHost(navController = navController, startDestination = Screen.HomeScreen.route){
         composable(Screen.HomeScreen.route){
-            HomeView()
+            HomeView(navController,viewModel)
+        }
+        composable(Screen.AddScreen.route){
+            AddEditDetailView(id =0L ,viewModel=viewModel, navController = navController)
         }
 
     }
